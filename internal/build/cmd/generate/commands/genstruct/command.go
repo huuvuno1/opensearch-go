@@ -35,14 +35,14 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/cmd"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/cmd"
 
 	"golang.org/x/tools/go/packages"
 	"golang.org/x/tools/imports"
 
 	"github.com/spf13/cobra"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/utils"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/utils"
 )
 
 var (
@@ -66,7 +66,7 @@ func init() {
 		pkgNames = strings.Split(pkgNamesEnv, ",")
 	} else {
 		pkgNames = []string{
-			"github.com/opensearch-project/opensearch-go/opensearchapi",
+			"github.com/huuvuno1/opensearch-go/opensearchapi",
 		}
 	}
 
@@ -99,7 +99,6 @@ var genapiCmd = &cobra.Command{
 }
 
 // Command represents the "genapi" command.
-//
 type Command struct {
 	Output         string
 	Gofmt          bool
@@ -108,7 +107,6 @@ type Command struct {
 }
 
 // Execute runs the command.
-//
 func (cmd *Command) Execute() (err error) {
 	EsVersion, err = utils.EsVersion("")
 	if err != nil {

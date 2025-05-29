@@ -32,11 +32,10 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/utils"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/utils"
 )
 
 // DebugInfo returns information about the endpoint as a string.
-//
 func (e *Endpoint) DebugInfo() string {
 	var out strings.Builder
 	w := tabwriter.NewWriter(&out, 0, 0, 1, ' ', 0)

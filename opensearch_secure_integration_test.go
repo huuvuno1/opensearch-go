@@ -7,6 +7,7 @@
 // Modifications Copyright OpenSearch Contributors. See
 // GitHub history for details.
 
+//go:build integration && secure
 // +build integration,secure
 
 package opensearch_test
@@ -18,7 +19,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/opensearch-project/opensearch-go/v2"
+	"github.com/huuvuno1/opensearch-go/v2"
 	"github.com/stretchr/testify/assert"
 )
 

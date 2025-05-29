@@ -35,11 +35,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/cmd"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/cmd"
 
 	"github.com/spf13/cobra"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/utils"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/utils"
 )
 
 var (
@@ -93,7 +93,6 @@ var gensourceCmd = &cobra.Command{
 }
 
 // Command represents the "gensource" command.
-//
 type Command struct {
 	Input          string
 	Output         string
@@ -104,7 +103,6 @@ type Command struct {
 }
 
 // Execute runs the command.
-//
 func (cmd *Command) Execute() (err error) {
 	var inputFiles []string
 

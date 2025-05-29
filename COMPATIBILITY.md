@@ -3,7 +3,7 @@
 
 ## Compatibility with OpenSearch
 
-The below matrix shows the compatibility of the [`opensearch-go`](https://pkg.go.dev/github.com/opensearch-project/opensearch-go) with versions of [`OpenSearch`](https://opensearch.org/downloads.html#opensearch).
+The below matrix shows the compatibility of the [`opensearch-go`](https://pkg.go.dev/github.com/huuvuno1/opensearch-go) with versions of [`OpenSearch`](https://opensearch.org/downloads.html#opensearch).
 
 | Client Version | OpenSearch Version |
 | -------------- | ------------------ |

@@ -24,6 +24,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build !integration
 // +build !integration
 
 package opensearch_test
@@ -36,8 +37,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/opensearch-project/opensearch-go/v2"
-	"github.com/opensearch-project/opensearch-go/v2/opensearchtransport"
+	"github.com/huuvuno1/opensearch-go/v2"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchtransport"
 )
 
 func init() {
@@ -81,7 +82,7 @@ func ExampleNewClient() {
 }
 
 func ExampleNewClient_logger() {
-	// import "github.com/opensearch-project/opensearch-go/opensearchtransport"
+	// import "github.com/huuvuno1/opensearch-go/opensearchtransport"
 
 	// Use one of the bundled loggers:
 	//

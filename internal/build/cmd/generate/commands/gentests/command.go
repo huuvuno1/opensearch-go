@@ -41,8 +41,8 @@ import (
 	"github.com/spf13/cobra"
 	yaml "gopkg.in/yaml.v2"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/cmd"
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/utils"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/cmd"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/utils"
 )
 
 var (
@@ -98,7 +98,6 @@ var gentestsCmd = &cobra.Command{
 }
 
 // Command represents the "gentests" command.
-//
 type Command struct {
 	Input          string
 	Output         string
@@ -109,7 +108,6 @@ type Command struct {
 }
 
 // Execute runs the command.
-//
 func (cmd *Command) Execute() error {
 	if len(apiRegistry) < 1 {
 		return fmt.Errorf("API registry in 'api_registry.gen.go' is empty: Did you run go generate?")

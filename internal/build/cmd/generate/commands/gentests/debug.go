@@ -30,11 +30,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/utils"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/utils"
 )
 
 // DebugInfo returns information about the endpoint as a string.
-//
 func (tg TestSuite) DebugInfo() string {
 	var out strings.Builder
 

@@ -24,6 +24,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build !integration
 // +build !integration
 
 package opensearch
@@ -40,7 +41,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/opensearch-project/opensearch-go/v2/opensearchtransport"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchtransport"
 )
 
 var called bool

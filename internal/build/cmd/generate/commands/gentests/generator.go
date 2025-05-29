@@ -53,7 +53,6 @@ func init() {
 }
 
 // Generator represents the "gentests" generator.
-//
 type Generator struct {
 	b bytes.Buffer
 
@@ -61,7 +60,6 @@ type Generator struct {
 }
 
 // Output returns the generator output.
-//
 func (g *Generator) Output() (io.Reader, error) {
 	name := g.TestSuite.Name()
 
@@ -122,7 +120,6 @@ func (g *Generator) Output() (io.Reader, error) {
 }
 
 // OutputFormatted returns a formatted generator output.
-//
 func (g *Generator) OutputFormatted() (io.Reader, error) {
 	out, err := g.Output()
 	if err != nil {
@@ -221,9 +218,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/opensearch-project/opensearch-go/v2"
-	"github.com/opensearch-project/opensearch-go/v2/opensearchapi"
-	"github.com/opensearch-project/opensearch-go/v2/opensearchtransport"
+	"github.com/huuvuno1/opensearch-go/v2"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchapi"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchtransport"
 )
 
 var (
@@ -298,7 +295,6 @@ _ = recoverPanic
 }
 
 // Reference: https://github.com/opensearch-project/OpenSearch/blob/main/test/framework/src/main/java/org/opensearch/test/rest/OpenSearchRestTestCase.java
-//
 func (g *Generator) genCommonSetup() {
 	g.w(`
 	// ----- Common Setup -------------------------------------------------------------

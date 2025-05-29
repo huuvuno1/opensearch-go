@@ -9,7 +9,7 @@ linters-settings:
     sections:
       - standard
       - default
-      - prefix(github.com/opensearch-project/opensearch-go)
+      - prefix(github.com/huuvuno1/opensearch-go)
   goconst:
     min-occurrences: 5
     ignore-tests: true
@@ -25,7 +25,7 @@ linters-settings:
       - FIXME
       - HACK
   goimports:
-    local-prefixes: github.com/opensearch-project/opensearch-go
+    local-prefixes: github.com/huuvuno1/opensearch-go
   gosimple:
     go: "1.18"
     checks: ["all"]

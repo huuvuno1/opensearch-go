@@ -19,8 +19,8 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
-	opensearch "github.com/opensearch-project/opensearch-go/v2"
-	opensearchapi "github.com/opensearch-project/opensearch-go/v2/opensearchapi"
+	opensearch "github.com/huuvuno1/opensearch-go/v2"
+	opensearchapi "github.com/huuvuno1/opensearch-go/v2/opensearchapi"
 	"net/http"
 	"strings"
 )
@@ -163,9 +163,9 @@ import (
 	"log"
 
 	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/opensearch-project/opensearch-go/v2"
-	"github.com/opensearch-project/opensearch-go/v2/opensearchapi"
-	requestsigner "github.com/opensearch-project/opensearch-go/v2/signer/aws"
+	"github.com/huuvuno1/opensearch-go/v2"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchapi"
+	requestsigner "github.com/huuvuno1/opensearch-go/v2/signer/aws"
 )
 
 const endpoint = "" // e.g. https://opensearch-domain.region.com
@@ -229,9 +229,9 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
-	opensearch "github.com/opensearch-project/opensearch-go/v2"
-	opensearchapi "github.com/opensearch-project/opensearch-go/v2/opensearchapi"
-	requestsigner "github.com/opensearch-project/opensearch-go/v2/signer/awsv2"
+	opensearch "github.com/huuvuno1/opensearch-go/v2"
+	opensearchapi "github.com/huuvuno1/opensearch-go/v2/opensearchapi"
+	requestsigner "github.com/huuvuno1/opensearch-go/v2/signer/awsv2"
 )
 
 const endpoint = "" // e.g. https://opensearch-domain.region.com or Amazon OpenSearch Serverless endpoint

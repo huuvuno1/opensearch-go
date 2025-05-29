@@ -21,7 +21,7 @@ So you want to contribute code to the OpenSearch Go Client? Excellent! We're gla
 
 ### Git Clone OpenSearch Go Client Repository
 
-Fork [opensearch-project/opensearch-go](https://github.com/opensearch-project/opensearch-go) and clone locally, e.g. `git clone https://github.com/[your username]/opensearch-go.git`.
+Fork [opensearch-project/opensearch-go](https://github.com/huuvuno1/opensearch-go) and clone locally, e.g. `git clone https://github.com/[your username]/opensearch-go.git`.
 
 ### Install Prerequisites
 

@@ -24,6 +24,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build integration
 // +build integration
 
 package opensearchapi_test
@@ -37,8 +38,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/opensearch-project/opensearch-go/v2"
-	"github.com/opensearch-project/opensearch-go/v2/opensearchapi"
+	"github.com/huuvuno1/opensearch-go/v2"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchapi"
 )
 
 func createTestIndex(client *opensearch.Client, index string) error {

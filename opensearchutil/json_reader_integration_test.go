@@ -24,6 +24,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build integration
 // +build integration
 
 package opensearchutil_test
@@ -32,9 +33,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/opensearch-project/opensearch-go/v2"
-	"github.com/opensearch-project/opensearch-go/v2/opensearchapi"
-	"github.com/opensearch-project/opensearch-go/v2/opensearchutil"
+	"github.com/huuvuno1/opensearch-go/v2"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchapi"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchutil"
 )
 
 func TestJSONReaderIntegration(t *testing.T) {

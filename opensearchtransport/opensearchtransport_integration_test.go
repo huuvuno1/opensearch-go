@@ -40,8 +40,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/opensearch-project/opensearch-go/v2/opensearchtransport"
-	"github.com/opensearch-project/opensearch-go/v2/opensearchutil"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchtransport"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchutil"
 )
 
 var (

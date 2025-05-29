@@ -16,13 +16,14 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	"github.com/aws/aws-sdk-go-v2/aws"
-	awsSignerV4 "github.com/aws/aws-sdk-go-v2/aws/signer/v4"
-	"github.com/opensearch-project/opensearch-go/v2/signer"
 	"io/ioutil"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/aws/aws-sdk-go-v2/aws"
+	awsSignerV4 "github.com/aws/aws-sdk-go-v2/aws/signer/v4"
+	"github.com/huuvuno1/opensearch-go/v2/signer"
 )
 
 const (

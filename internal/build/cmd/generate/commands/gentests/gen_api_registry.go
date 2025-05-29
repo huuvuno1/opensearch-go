@@ -24,6 +24,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build ignore
 // +build ignore
 
 package main
@@ -51,7 +52,7 @@ func init() {
 		pkgNames = strings.Split(pkgNamesEnv, ",")
 	} else {
 		pkgNames = []string{
-			"github.com/opensearch-project/opensearch-go/opensearchapi",
+			"github.com/huuvuno1/opensearch-go/opensearchapi",
 		}
 	}
 

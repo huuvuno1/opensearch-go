@@ -39,12 +39,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/cmd"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/cmd"
 
 	"github.com/spf13/cobra"
 	"golang.org/x/tools/imports"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/utils"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/utils"
 )
 
 var (
@@ -120,7 +120,6 @@ var genexamplesDocCmd = &cobra.Command{
 }
 
 // SrcCommand represents the command for generating Go source code.
-//
 type SrcCommand struct {
 	Input          string
 	Output         string
@@ -130,7 +129,6 @@ type SrcCommand struct {
 }
 
 // DocCommand represents the command for generating ASCIIDoc examples.
-//
 type DocCommand struct {
 	Input       string
 	Output      string
@@ -138,7 +136,6 @@ type DocCommand struct {
 }
 
 // Execute runs the command.
-//
 func (cmd *SrcCommand) Execute() error {
 	var (
 		processed  int
@@ -326,7 +323,6 @@ func (cmd *SrcCommand) processExample(e Example) error {
 }
 
 // Execute runs the command.
-//
 func (cmd *DocCommand) Execute() error {
 	var (
 		processed int

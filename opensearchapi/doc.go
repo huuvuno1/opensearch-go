@@ -28,7 +28,7 @@
 Package opensearchapi provides the Go API for OpenSearch.
 
 It is automatically included in the client provided by the
-github.com/opensearch-project/opensearch-go package:
+github.com/huuvuno1/opensearch-go package:
 
 	client, _ := opensearch.NewDefaultClient()
 	res, _ := client.Info()
@@ -82,13 +82,13 @@ It has a minor overhead compared to using a struct directly;
 refer to the opensearchapi_benchmark_test.go suite for concrete numbers.
 
 See the documentation for each API function or struct at
-https://godoc.org/github.com/opensearch-project/opensearch-go,
+https://godoc.org/github.com/huuvuno1/opensearch-go,
 or locally by:
 
-	go doc github.com/opensearch-project/opensearch-go/opensearchapi Index
-	go doc github.com/opensearch-project/opensearch-go/opensearchapi IndexRequest
+	go doc github.com/huuvuno1/opensearch-go/opensearchapi Index
+	go doc github.com/huuvuno1/opensearch-go/opensearchapi IndexRequest
 
-Response
+# Response
 
 The opensearchapi.Response type is a lightweight wrapper around http.Response.
 
@@ -101,6 +101,5 @@ It is imperative to close the response body for a non-nil response.
 The Response type implements a couple of convenience methods for accessing
 the status, checking an error status code or printing
 the response body for debugging purposes.
-
 */
 package opensearchapi

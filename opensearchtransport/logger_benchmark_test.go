@@ -24,6 +24,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build !integration
 // +build !integration
 
 package opensearchtransport_test
@@ -35,7 +36,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/opensearch-project/opensearch-go/v2/opensearchtransport"
+	"github.com/huuvuno1/opensearch-go/v2/opensearchtransport"
 )
 
 func BenchmarkTransportLogger(b *testing.B) {

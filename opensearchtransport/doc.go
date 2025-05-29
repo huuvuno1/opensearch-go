@@ -27,7 +27,7 @@
 /*
 Package opensearchtransport provides the transport layer for the OpenSearch client.
 
-It is automatically included in the client provided by the github.com/opensearch-project/opensearch-go package
+It is automatically included in the client provided by the github.com/huuvuno1/opensearch-go package
 and is not intended for direct use: to configure the client, use the opensearch.Config struct.
 
 The default HTTP transport of the client is http.Transport; use the Transport option to customize it;

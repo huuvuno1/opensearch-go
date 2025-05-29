@@ -35,11 +35,10 @@ import (
 
 	"golang.org/x/tools/imports"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/utils"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/utils"
 )
 
 // Generator represents the "gensource" generator.
-//
 type Generator struct {
 	b bytes.Buffer
 
@@ -47,7 +46,6 @@ type Generator struct {
 }
 
 // Output returns the generator output.
-//
 func (g *Generator) Output() (io.Reader, error) {
 	g.genHeader()
 	g.genConstructor()
@@ -61,7 +59,6 @@ func (g *Generator) Output() (io.Reader, error) {
 }
 
 // OutputFormatted returns a formatted generator output.
-//
 func (g *Generator) OutputFormatted() (io.Reader, error) {
 	out, err := g.Output()
 	if err != nil {

@@ -40,9 +40,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/cmd"
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/utils"
-	"github.com/opensearch-project/opensearch-go/v2/internal/version"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/cmd"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/utils"
+	"github.com/huuvuno1/opensearch-go/v2/internal/version"
 	"github.com/spf13/cobra"
 )
 

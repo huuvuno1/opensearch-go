@@ -35,7 +35,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/opensearch-project/opensearch-go/v2/internal/build/utils"
+	"github.com/huuvuno1/opensearch-go/v2/internal/build/utils"
 )
 
 var reFilename = regexp.MustCompile(`\d*_?(.+)\.ya?ml`)
@@ -43,14 +43,12 @@ var reNumber = regexp.MustCompile(`^\d+$`)
 var reBaseFilename = regexp.MustCompile(`rest-api-spec/test/\w+/(.*$)`)
 
 // TestPayload represents a single raw section (`---`) from the YAML file.
-//
 type TestPayload struct {
 	Filepath string
 	Payload  interface{}
 }
 
 // TestSuite represents a group of tests (a "section") in one file.
-//
 type TestSuite struct {
 	Dir      string
 	Filepath string
@@ -65,7 +63,6 @@ type TestSuite struct {
 }
 
 // Test represents a single named test.
-//
 type Test struct {
 	Name     string
 	Filepath string
@@ -84,11 +81,9 @@ type Test struct {
 type Steps []Step
 
 // Step represents an Action or an Assertion.
-//
 type Step interface{}
 
 // Action represents an API action (`do`).
-//
 type Action struct {
 	payload interface{}
 
@@ -99,7 +94,6 @@ type Action struct {
 }
 
 // Assertion represents a test assertion (`is_true`, `match`, etc).
-//
 type Assertion struct {
 	payload interface{}
 
@@ -107,13 +101,11 @@ type Assertion struct {
 }
 
 // Stash represents the registry for `set` operations.
-//
 type Stash struct {
 	payload interface{}
 }
 
 // NewTestSuite returns a test group from the payloads.
-//
 func NewTestSuite(fpath string, payloads []TestPayload) TestSuite {
 	ts := TestSuite{
 		Dir:      strings.Title(filepath.Base(filepath.Dir(fpath))),
@@ -233,7 +225,6 @@ func NewTestSuite(fpath string, payloads []TestPayload) TestSuite {
 }
 
 // NewAction returns a new action from the payload.
-//
 func NewAction(payload interface{}) Action {
 	defer func() {
 		if r := recover(); r != nil {
@@ -266,19 +257,16 @@ func NewAction(payload interface{}) Action {
 }
 
 // NewAssertion returns a new assertion from the payload.
-//
 func NewAssertion(operation string, payload interface{}) Assertion {
 	return Assertion{operation: operation, payload: payload}
 }
 
 // NewStash returns a new stash from the payload.
-//
 func NewStash(payload interface{}) Stash {
 	return Stash{payload: payload}
 }
 
 // Name returns a human name for the test suite.
-//
 func (ts TestSuite) Name() string {
 	var b strings.Builder
 	for _, v := range strings.Split(ts.Dir, ".") {
@@ -293,7 +281,6 @@ func (ts TestSuite) Name() string {
 }
 
 // Filename returns a suitable filename for the test suite.
-//
 func (ts TestSuite) Filename() string {
 	var b strings.Builder
 
@@ -307,13 +294,11 @@ func (ts TestSuite) Filename() string {
 }
 
 // SkipEsVersion returns true if the test suite should be skipped.
-//
 func (ts TestSuite) SkipEsVersion(minmax string) bool {
 	return skipVersion(minmax)
 }
 
 // BaseFilename extracts and returns the test filename in form of `foo/bar/10_qux.yml`.
-//
 func (t Test) BaseFilename() string {
 	parts := reBaseFilename.FindStringSubmatch(t.Filepath)
 	if len(parts) < 1 {
@@ -323,14 +308,12 @@ func (t Test) BaseFilename() string {
 }
 
 // SkipEsVersion returns true if the test should be skipped.
-//
 func (t Test) SkipEsVersion(minmax string) bool {
 	return skipVersion(minmax)
 }
 
 // ContainsAssertion returns true when the set of steps
 // contain an assertion, or a specific assertion.
-//
 func (s Steps) ContainsAssertion(keys ...string) bool {
 	for _, step := range s {
 		if a, ok := step.(Assertion); ok {
@@ -359,7 +342,6 @@ func (s Steps) ContainsAssertion(keys ...string) bool {
 }
 
 // ContainsCatch returns true when the set of steps contains the "catch" clause.
-//
 func (s Steps) ContainsCatch(keys ...string) bool {
 	for _, step := range s {
 		if a, ok := step.(Action); ok {
@@ -372,7 +354,6 @@ func (s Steps) ContainsCatch(keys ...string) bool {
 }
 
 // ContainsStash returns true when the set of steps contains the "set" clause.
-//
 func (s Steps) ContainsStash(keys ...string) bool {
 	for _, step := range s {
 		if _, ok := step.(Stash); ok {
@@ -383,13 +364,11 @@ func (s Steps) ContainsStash(keys ...string) bool {
 }
 
 // Method returns the API method name for the action.
-//
 func (a Action) Method() string {
 	return utils.NameToGo(a.method)
 }
 
 // Request returns the API request name for the action.
-//
 func (a Action) Request() string {
 	var rParts []string
 	parts := strings.Split(a.method, ".")
@@ -400,7 +379,6 @@ func (a Action) Request() string {
 }
 
 // Params returns a map of parameters for the action.
-//
 func (a Action) Params() map[string]interface{} {
 	var kk string
 	out := make(map[string]interface{})
@@ -436,7 +414,6 @@ func (a Action) Params() map[string]interface{} {
 // Condition returns the condition for the assertion.
 //
 // TODO: Evaulate https://godoc.org/github.com/google/go-cmp/cmp
-//
 func (a Assertion) Condition() string {
 	var (
 		output string
@@ -734,7 +711,6 @@ default:
 }
 
 // Error returns an error handling for the failed assertion.
-//
 func (a Assertion) Error() string {
 	var (
 		output string
@@ -796,7 +772,6 @@ func (a Assertion) Error() string {
 }
 
 // Key returns the stash key as a string.
-//
 func (s Stash) Key() string {
 	vals := utils.MapValues(s.payload)
 	if len(vals) < 1 {
@@ -807,7 +782,6 @@ func (s Stash) Key() string {
 }
 
 // Value returns the stash value as a string.
-//
 func (s Stash) Value() string {
 	vals := utils.MapKeys(s.payload)
 	if len(vals) < 1 {
@@ -818,7 +792,6 @@ func (s Stash) Value() string {
 }
 
 // expand "unwraps" a field name like `foo.bar.0.baz` into a proper Go structure
-//
 func expand(s string, format ...string) string {
 	var (
 		b bytes.Buffer
@@ -873,7 +846,6 @@ func expand(s string, format ...string) string {
 }
 
 // catchnil returns a condition which expands the input and checks if any part is not nil.
-//
 func catchnil(input string) string {
 	var output string
 
@@ -890,7 +862,6 @@ func catchnil(input string) string {
 }
 
 // escape replaces unsafe characters in strings
-//
 func escape(s interface{}) string {
 	if s, ok := s.(string); ok {
 		// s = strings.Replace(s, `"`, `'`, -1)
@@ -903,7 +874,6 @@ func escape(s interface{}) string {
 
 // skipVersion parses minmax string and returns
 // true when EsVersion is in the range.
-//
 func skipVersion(minmax string) bool {
 	versions := strings.Split(minmax, "-")
 	if len(versions) < 2 {
