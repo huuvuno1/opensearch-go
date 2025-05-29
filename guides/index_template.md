@@ -10,7 +10,7 @@ Assuming you have OpenSearch running locally on port 9200, you can create a clie
 package main
 
 import (
-    "github.com/huuvuno1/opensearch-go.git/v2"
+    "github.com/huuvuno1/opensearch-go/v2"
     "log"
 )
 

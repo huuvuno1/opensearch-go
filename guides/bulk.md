@@ -10,7 +10,7 @@ First, create a client instance with the following code:
 package main
 
 import (
-    "github.com/huuvuno1/opensearch-go.git/v2"
+    "github.com/huuvuno1/opensearch-go/v2"
     "log"
 )
 

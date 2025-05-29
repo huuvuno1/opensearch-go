@@ -19,7 +19,7 @@ Let's create a client instance to access this cluster:
     package main
 
     import (
-        "github.com/huuvuno1/opensearch-go.git/v2"
+        "github.com/huuvuno1/opensearch-go/v2"
         "log"
     )
 
