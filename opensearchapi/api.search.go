@@ -360,7 +360,7 @@ func (r SearchRequest) Do(ctx context.Context, transport Transport) (*Response, 
 
 	start := time.Now()
 	res, err := transport.Perform(req)
-	log.Info().Ctx(ctx).Dur("log_latency", time.Since(start)).Msgf("Transport Perform end: %s %s", method, req.URL.String())
+	log.Info().Ctx(ctx).Dur("latency", time.Since(start)).Msgf("Transport Perform end: %s %s", method, req.URL.String())
 	if err != nil {
 		return nil, err
 	}
