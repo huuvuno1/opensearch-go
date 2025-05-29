@@ -359,7 +359,6 @@ func (r SearchRequest) Do(ctx context.Context, transport Transport) (*Response, 
 	}
 
 	start := time.Now()
-	log.Info().Ctx(ctx).Msgf("Transport Perform start: %s %s", method, req.URL.String())
 	res, err := transport.Perform(req)
 	log.Info().Ctx(ctx).Dur("took", time.Since(start)).Msgf("Transport Perform end: %s %s", method, req.URL.String())
 	if err != nil {
