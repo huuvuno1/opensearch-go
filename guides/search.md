@@ -12,8 +12,8 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/opensearch-project/opensearch-go/v2"
-    "github.com/opensearch-project/opensearch-go/v2/opensearchapi"
+    "github.com/huuvuno1/opensearch-go.git/v2"
+    "github.com/huuvuno1/opensearch-go.git/v2/opensearchapi"
     "log"
     "strings"
 )

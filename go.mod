@@ -1,4 +1,4 @@
-module github.com/opensearch-project/opensearch-go/v2
+module github.com/huuvuno1/opensearch-go.git/v2
 
 go 1.15
 
